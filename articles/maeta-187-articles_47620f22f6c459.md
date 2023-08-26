@@ -23,11 +23,8 @@ Next.js を使用して LP を制作した際の失敗談です。
 ## 事象
 
 Next/Image を使用して画像を表示させ、`width`/`height`を Figma で確認した値を直接指定して実装進めていました。
-
 勿論、レスポンシブ対応も事前に分かっていましたが、一旦 PC サイズで実装してから、スマホサイズでの調整を行う予定でした。
-
 ところが、`width`/`height`を固定値にしていたためレスポンシブ対応ができない状況に陥ってしまいました。
-
 調べたり、試行錯誤して出来上がったのが以下のコードです。(完全再現とまではいかないですがおおよそこんな感じです)
 
 ```tsx:ImageComponent
@@ -83,7 +80,6 @@ export default ImageComponent
 ```
 
 切羽詰まっていたんでしょうね。`width`/`height`を固定値にしているにも関わらず、`style`でも指定すると言う無茶なことをしています。
-
 サンプル画像で使用したワンちゃんもどこか悲しそうに見えます。
 
 ## 解決方法
@@ -91,15 +87,12 @@ export default ImageComponent
 ### レスポンシブ
 
 まずは公式ドキュメントを確認します。
-
 きちんとレスポンシブについて触れていますね！
 
 @[card](https://nextjs.org/docs/app/building-your-application/optimizing/images#responsive)
 
 しかもサンプルコードのおまけ付きです。
-
 では一旦これをコピペしてみましょう。
-
 ん?何やらエラーが出ていますね。
 
 ```bash
@@ -107,15 +100,10 @@ Error: Image with src "https://picsum.photos/id/237/200/300" is missing required
 ```
 
 エラー内容を読むと、`width`が必須とのことです。
-
 これは Next/Image の仕様なので仕方ありません。
-
 ただし、`fill`を使用する場合は`width`/`height`を指定する必要はないようです。
-
 では、`fill`を使用してみましょう。公式ドキュメントにも書いてありますが、`fill`を使用する場
-
 合は親要素に`position: relative`と`display: block`を指定する必要があります。
-
 それを踏まえて、以下のようにコードを書き換えます。
 
 ```tsx:ImageComponent
