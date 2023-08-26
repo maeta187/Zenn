@@ -3,7 +3,7 @@ title: 'Next/Imageを何となく使ってたらボコボコにされた'
 emoji: '🤕'
 type: 'tech'
 topics: ['Nextjs', 'React', 'Image']
-published: false
+published: true
 ---
 
 ## はじめに
