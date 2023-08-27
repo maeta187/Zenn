@@ -152,8 +152,8 @@ const ImageComponent = () => {
       style={{
         display: 'block',
         position: 'relative',
-        width: '400px',
-        height: '600px'
+        width: '200px',
+        height: '300px'
       }}
     >
       <Image
