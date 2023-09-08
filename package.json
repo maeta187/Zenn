@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "pnpm exec zenn preview",
+    "article": "pnpm exec zenn new:article"
   },
   "keywords": [],
   "author": "",
