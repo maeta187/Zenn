@@ -87,6 +87,7 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
 トースト内に表示テキスト、トーストの種類、表示/非表示を管理する値を状態管理します。
 `showToast`、`closeToast` は Context から呼び出す関数です。
 それぞれ、トーストを表示する、トーストを非表示にする関数です。
+`clearTimeout()`を実行していますが、これがないと連続で`showToast`を実行してしまった際、前回の`setTimeout()`が実行されたままとなり 5 秒待たずにトーストが非表示になってしまいます。
 `useState`の Dispatch をエクポートして実行する方法もあると思いますが、表示/非表示の役割を持った関数を Context から呼び出す方がシンプルなのでこのように実装しました。
 
 ## トーストのコンポーネントの実装
