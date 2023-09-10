@@ -8,7 +8,7 @@ published: false
 
 ## はじめに
 
-実務で新プロジェクトのでトースト機能が要件として出ました。
+実務の新プロジェクトでトースト機能が要件として出ました。
 POC として、Nuxt.js 環境でライブラリを使用せず実装したので、今回は Next.js 環境で実装してみます。
 CSS は TailwindCSS を使用して自分では CSS を一切書かないようにしてみました。
 
@@ -290,8 +290,8 @@ export default Toast
 
 `success`、`warning`、`error` の 3 種類のトーストコンポーネントを用意しました。
 それを Context から受け取った`toastType`によって表示するトーストを切り替えています。
-`SuccessToast`、`WarningToast`、`ErrorToast`のコンポーネント内でアイコンを表示していますが、`Heroicons`を使用しています。
-`Heroicons`の開発元は TailwindCSS と同じ開発チームなので統一感を出すために使用しました。
+`SuccessToast`、`WarningToast`、`ErrorToast`のコンポーネント内でアイコンを表示していますが、**Heroicons**を使用しています。
+**Heroicons**の開発元は TailwindCSS と同じ開発チームなので統一感を出すために使用しました。
 
 https://heroicons.com/
 
@@ -299,7 +299,7 @@ https://heroicons.com/
 
 トーストを表示する際よくあるのが、上から下にスライドして表示するアニメーションや、表示してから数秒後にフェードアウトするアニメーションなどがあります。
 今回は表示して 5 秒後にフェードアウトする仕様で実装をします。
-それぞれのトーストコンポーネントに`animate-fade-out`というクラスを付与しています。
+それぞれのトーストコンポーネントに`animate-fade-out`と言うフェードアウトの役割を持ったクラスを付与しています。
 ですが、このクラスは TailwindCSS には存在しないクラスです。
 このためだけに CSS を書くのは面倒です…
 公式ドキュメントにこのような記述がありました。
