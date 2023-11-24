@@ -3,7 +3,8 @@ title: '個人開発アプリでdaisyUIを採用した話'
 emoji: '🌻'
 type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: [Nextjs, React, TailwindCSS, daisyUI]
-published: 2023-11-24 20:00
+published: true
+published_at: 2023-11-24 20:00
 ---
 
 ## はじめに
