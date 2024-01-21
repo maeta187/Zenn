@@ -3,7 +3,8 @@ title: 'フロントエンジニア向け!「DDL?トランザクション？な�
 emoji: '🤮'
 type: 'tech'
 topics: [PostgreSQL, SQL, TypeScript, Prisma]
-published: false
+published: true,
+published_at: 2024-1-21 20:00
 ---
 
 ## はじめに
