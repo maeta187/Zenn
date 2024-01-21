@@ -4,7 +4,7 @@ emoji: '🤮'
 type: 'tech'
 topics: [PostgreSQL, SQL, TypeScript, Prisma]
 published: true,
-published_at: 2024-1-21 20:00
+published_at: 2024-01-21 20:00
 ---
 
 ## はじめに
