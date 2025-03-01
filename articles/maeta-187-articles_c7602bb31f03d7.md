@@ -39,7 +39,7 @@ $ "lint-fix":　"eslint --cache --fix src/**/*.ts && prettier --write src/**/*.t
 
 但し、`warn`としているルールが`error`扱いになるなど違和感を感じたのを覚えています。
 また、TS ファイルを実行した時に CommonJS と ES Modules の違いによるエラーも発生しました。
-引越しも控えている中でできるだけ早く環境を新しくしたのと、TS を実行するだけの環境なのでパーケージ依存による管理コストを減らしたいと思い移行することにしました。
+引越しも控えている中でできるだけ早く環境を新しくしたいのと、TS を実行するだけの環境なのでパッケージ依存による管理コストを減らしたいと思い移行することにしました。
 
 ## Bun と Biome への移行
 
@@ -72,8 +72,18 @@ Bun にも対応しているので、Bun 環境でも問題なく使用できま
 @[card](https://biomejs.dev/ja/guides/manual-installation/)
 
 内容を確認すると、Node.js や npm を使用しない場合は Biome のスタンドアロンな CLI バイナリを使用できるとのことです。
-自分は Bun を使用しているのでこちらの方法で進めていきます。
+~~自分は Bun を使用しているのでこちらの方法で進めていきます。~~
 curl コマンド実行後、再度`biome init`を実行して無事`biome.json`が作成されました！
+
+:::message
+後で分かったのですが、bun で Biome のパッケージをインストールして実行すると`node_modules`内の`@biomejs/cli-darwin-x64/biome`を実行時に参照しているようです。
+ですが、`node_modules`内には`@biomejs/cli-darwin-arm64/biome`がインストールされているのでエラーが発生していたようです。(自分は M1 Mac を使用)
+使用している PC との相性もありますが同じような現象が発生した場合は、 [Biome のインストール](https://biomejs.dev/ja/guides/manual-installation/#biome%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)に記載されている手順でインストールしてください。
+開発環境で限定的に使用したい場合は、bun を使用しないことをお勧めします。
+下記の issue にも似たような内容が記載されており、現在も解決されていないようなので今後のアップデートで修正されることを期待します。
+
+[🐛 arm64 linux installs x64 linux binary](https://github.com/biomejs/biome/issues/4717)
+:::
 
 #### マイグレーション
 
