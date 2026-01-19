@@ -3,7 +3,8 @@ title: 'React NativeとExpoを知らない状態でバイブコーディング�
 emoji: '📱'
 type: 'tech'
 topics: [React, ReactNative, Expo, Codex, 個人開発]
-published: false
+published: true
+published_at: 2026-01-19 19:00
 ---
 
 ## はじめに
